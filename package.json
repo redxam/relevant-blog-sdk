@@ -1,0 +1,64 @@
+{
+  "name": "relevant-blog-sdk",
+  "version": "1.0.0",
+  "description": "Drop-in blog pages for Next.js and React apps, powered by Relevant's content engine.",
+  "author": "Relevant <hello@relevant.business>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/redxam/relevant-blog-sdk"
+  },
+  "homepage": "https://github.com/redxam/relevant-blog-sdk#readme",
+  "keywords": ["blog", "sdk", "nextjs", "react", "cms", "seo", "content"],
+  "main": "./dist/core/index.js",
+  "types": "./dist/core/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/core/index.d.ts",
+      "default": "./dist/core/index.js"
+    },
+    "./next-pages": {
+      "types": "./dist/next-pages/index.d.ts",
+      "default": "./dist/next-pages/index.js"
+    },
+    "./next-pages/post": {
+      "types": "./dist/next-pages/post.d.ts",
+      "default": "./dist/next-pages/post.js"
+    },
+    "./next-app": {
+      "types": "./dist/next-app/index.d.ts",
+      "default": "./dist/next-app/index.js"
+    },
+    "./next-app/post": {
+      "types": "./dist/next-app/post.d.ts",
+      "default": "./dist/next-app/post.js"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "default": "./dist/react/index.js"
+    },
+    "./styles": "./dist/core/blog.module.css"
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc && cp src/core/blog.module.css dist/core/blog.module.css",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "next": ">=12.0.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "next": { "optional": true },
+    "react": { "optional": true },
+    "react-dom": { "optional": true }
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.28",
+    "next": "^14.2.35",
+    "react": "^18.3.1",
+    "typescript": "^5.9.3"
+  }
+}
