@@ -51,7 +51,7 @@ export async function fetchPosts(): Promise<BlogPost[]> {
       },
     );
     if (!res.ok) return [];
-    const rows: RawPost[] = await res.json();
+    const rows = (await res.json()) as RawPost[];
     return rows.map(addSlug);
   } catch {
     return [];

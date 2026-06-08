@@ -21,8 +21,8 @@ export function useBlogPosts({ apiUrl }: UseBlogConfig) {
         if (!r.ok) throw new Error(`Blog API returned ${r.status}`);
         return r.json();
       })
-      .then((data: BlogPost[]) => {
-        if (!cancelled) setPosts(data);
+      .then((data) => {
+        if (!cancelled) setPosts(data as BlogPost[]);
       })
       .catch((err) => {
         if (!cancelled) setError(err);
@@ -52,8 +52,8 @@ export function useBlogPost({ apiUrl }: UseBlogConfig & { slug: string }) {
         if (!r.ok) throw new Error(`Blog API returned ${r.status}`);
         return r.json();
       })
-      .then((data: BlogPost | null) => {
-        if (!cancelled) setPost(data);
+      .then((data) => {
+        if (!cancelled) setPost(data as BlogPost | null);
       })
       .catch((err) => {
         if (!cancelled) setError(err);

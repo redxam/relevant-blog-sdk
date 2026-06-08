@@ -35,6 +35,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post) {
     const { notFound } = await import('next/navigation');
     notFound();
+    return null;
   }
 
   const words = wordCount(post.body);
