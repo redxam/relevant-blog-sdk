@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ES2018",
     "module": "commonjs",
-    "lib": ["ES2020"],
+    "lib": ["ES2018", "DOM"],
+    "jsx": "react-jsx",
     "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
@@ -13,10 +12,8 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "jsx": "react-jsx",
-    "allowJs": false
+    "resolveJsonModule": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/core/**/*", "src/next-app/**/*", "src/next-pages/**/*", "src/react/**/*"],
   "exclude": ["node_modules", "dist"]
 }
